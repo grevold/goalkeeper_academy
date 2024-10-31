@@ -1,0 +1,44 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: white;
+  background-color: black;
+  transition: background-color 0.5s ease-in-out;
+  z-index: 2;
+}
+.circle_active {
+  composes: circle;
+  background-color: red;
+  transition: background-color 0.5s ease-in-out;
+}
+.bar {
+  position: absolute;
+  border: 3px solid red;
+  width: 0%;
+  z-index: 1;
+}
+.bar_step_two {
+  composes: bar;
+  width: 50%;
+  transition: width 0.3s ease-in-out;
+}
+.bar_step_three {
+  composes: bar;
+  width: 100%;
+  transition: width 0.3s ease-in-out;
+}

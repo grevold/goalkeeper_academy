@@ -1,0 +1,59 @@
+.root {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+.image_container {
+  width: 150px;
+  z-index: 2;
+  margin-right: 50px;
+}
+.pattern {
+  position: absolute;
+  right: -100px;
+  height: 100px;
+  z-index: 1;
+}
+
+.coach_name {
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  max-width: 150px;
+}
+.rank {
+  font-size: 14px;
+  font-weight: 400;
+  width: 100%;
+  max-width: 150px;
+}
+.header {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 500px) {
+  .image_container {
+    width: 200px;
+  }
+  .header {
+    font-size: 32px;
+  }
+  .coach_name {
+    max-width: 300px;
+    font-size: 18px;
+  }
+  .rank {
+    font-size: 16px;
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 600px) {
+  .root {
+    display: none;
+  }
+}

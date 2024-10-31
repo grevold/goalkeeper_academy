@@ -1,0 +1,66 @@
+.root {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .root {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 100px;
+  }
+  .image_container {
+    width: 200px;
+    z-index: 2;
+    margin-right: 50px;
+  }
+  .pattern {
+    position: absolute;
+    right: -100px;
+    height: 100px;
+    z-index: 1;
+    scale: 2;
+  }
+  .coach_name {
+    font-size: 24px;
+  }
+  .rank {
+    font-size: 18px;
+  }
+  .icon {
+    width: 50px;
+  }
+  .achievement_description {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header{
+    font-size: 32px;
+    margin-bottom: 50px;
+  }
+  .root {
+    padding-left: 100px;
+  }
+  .image_container {
+    width: 350px;
+    z-index: 2;
+    margin-right: 100px;
+  }
+  .pattern {
+    scale: 4;
+  }
+  .coach_name {
+    font-size: 32px;
+  }
+  .rank {
+    font-size: 18px;
+  }
+  .achievement_description {
+    margin-left: 10px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 700px;
+  }
+}

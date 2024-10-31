@@ -1,5 +1,12 @@
+import { Layout } from "./components/Layout/Layout";
+import { MainPaige } from "./pages/MainPaige/MainPaige";
+
 function App() {
-  return <h1>Hello, world!</h1>;
+  return (
+    <Layout>
+      <MainPaige />
+    </Layout>
+  );
 }
 
 export default App;

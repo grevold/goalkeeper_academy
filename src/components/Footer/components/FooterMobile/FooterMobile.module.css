@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+  max-width: 295px;
+}
+
+@media (min-width: 600px) {
+  .root {
+    display: none;
+  }
+}
