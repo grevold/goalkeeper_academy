@@ -1,7 +1,11 @@
-import s from "./Contacts.module.css";
+import { ContactsDesktop } from "./ContactsDesktop/ContactsDesktop";
+import { ContactsMobile } from "./ContactsMobile/ContactsMobile";
 
 export function Contacts() {
   return (
-    <div className={s.root} id="contacts">Контакты</div>
+    <div id="contacts">
+      <ContactsMobile />
+      <ContactsDesktop />
+    </div>
   );
 }

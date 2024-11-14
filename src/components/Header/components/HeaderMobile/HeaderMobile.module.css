@@ -85,7 +85,7 @@
 
 .nav_active_underline {
   margin-top: 10px;
-  border: 2px solid red;
+  border: 2px solid #e52d27;
   border-radius: 30px;
   width: 100%;
   transition: width 0.5s;

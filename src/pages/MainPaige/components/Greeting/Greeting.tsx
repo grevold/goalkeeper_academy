@@ -6,8 +6,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { GREETING_SLIDES } from "../../../../constants";
+import { useContext } from "react";
+import { Context } from "../../../../App";
 
 export function Greeting() {
+  const { isModalOpened, setIsModalOpened } = useContext(Context);
   return (
     <div id="greeting">
       <Swiper
@@ -26,7 +29,12 @@ export function Greeting() {
                 <h2 className={s.slide_header}>{slide.title}</h2>
                 <span className={s.slide_description}>{slide.description}</span>
               </div>
-              <button className={s.button}>Записаться</button>
+              <button
+                className={s.button}
+                onClick={() => setIsModalOpened(true)}
+              >
+                Записаться
+              </button>
               <div className={s.image_slide_container}>
                 <img
                   className={s.image_slide}

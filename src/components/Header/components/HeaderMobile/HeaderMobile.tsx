@@ -1,12 +1,14 @@
 import { Box } from "@mui/material";
 import { BurgerIcon } from "../../../../icons/BurgerIcon";
 import s from "./HeaderMobile.module.css";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { CloseMenuIcon } from "../../../../icons/CloseMenuIcon";
 import { NAV } from "../../../../constants";
+import { Context } from "../../../../App";
 const bodyScrollLock = require("body-scroll-lock");
 
 export function HeaderMobile() {
+  
   const [state, setState] = useState(NAV[0].title);
   const refBody = useRef(null);
   const disableBodyScroll = bodyScrollLock.disableBodyScroll;

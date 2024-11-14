@@ -43,7 +43,7 @@
   .slide_status {
     font-size: 24px;
     font-weight: 900;
-    color: red;
+    color: #e52d27;
   }
   .slide_header {
     font-size: 24px;
@@ -57,7 +57,7 @@
   }
   .header {
     margin-left: 50px;
-    font-size: 24px;
+    font-size: 32px;
   }
 
   .image_container {
@@ -74,13 +74,40 @@
   }
 }
 
-@media (min-width: 1200px) {
-  .root {
+@media (min-width: 800px) {
+  .header {
+    font-size: 32px;
     margin-left: 100px;
-    margin-right: 100px;
+  }
+  .slide_container_text {
+    padding-left: 50px;
+  }
+  .slide_description {
+    max-width: 280px;
+  }
+  .image_container {
+    padding-left: 200px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    font-size: 48px;
+    margin-left: 50px;
+  }
+  .root {
+    margin-left: 50px;
+    margin-right: 50px;
   }
   .slide_description {
     font-size: 16px;
     max-width: 400px;
+  }
+}
+
+@media (min-width: 1500px) {
+  
+  .header {
+    font-size: 48px;
   }
 }
