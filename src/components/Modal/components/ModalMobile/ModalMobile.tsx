@@ -20,14 +20,8 @@ export function ModalMobile() {
             className={s.close_button_container}
             onClick={() => setIsModalOpened(false)}
           >
-            
             <CloseCross />
           </div>
-          <Box
-              component="img"
-              sx={{ width: "100px" }}
-              src={`${process.env.PUBLIC_URL}/images/logo_footer_mobile.png`}
-            />
 
           <div className={s.text_container}>
             <span>

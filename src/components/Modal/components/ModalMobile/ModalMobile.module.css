@@ -48,6 +48,10 @@
   margin-top: 20px;
 }
 
+.text_container span {
+  font-weight: 200;
+}
+
 .admin {
   display: flex;
   flex-direction: column;

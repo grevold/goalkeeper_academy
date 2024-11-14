@@ -8,6 +8,16 @@ import { Box, Button, Divider, Stack, Typography } from "@mui/material";
 import { NAV } from "../../../../constants";
 
 export function FooterDesktop() {
+  const scrollToBlock = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "start",
+      });
+    }
+  };
   return (
     <>
       <hr className={s.divider} />
@@ -39,13 +49,13 @@ export function FooterDesktop() {
           </Stack>
         </div>
 
-        <div className={s.nav_container}>
+        <ul className={s.nav_container}>
           {NAV.map((navItem) => (
-            <span key={navItem.title} className={s.nav}>
-              {navItem.title}
-            </span>
+            <li key={navItem.title} onClick={() => scrollToBlock(navItem.href)}>
+              <span className={s.nav}>{navItem.title}</span>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <div className={s.socials_container}>
           <VKIcon />

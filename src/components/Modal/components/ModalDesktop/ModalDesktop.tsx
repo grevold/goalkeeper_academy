@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import s from "./ModalDesktop.module.css";
 import { Context } from "../../../../App";
 import { CloseCross } from "../../../../icons/CloseCross";
@@ -6,19 +6,21 @@ import { VKIcon } from "../../../../icons/socials/VKIcon";
 import { TGIcon } from "../../../../icons/socials/TGIcon";
 import { WAPPIcon } from "../../../../icons/socials/WAPPIcon";
 import { RTIcon } from "../../../../icons/socials/RTIcon";
-import { Pattern } from "../../../../icons/Pattern";
-import { SmallPattern } from "../../../../icons/SmallPattern";
 import { ModalPattern } from "../../../../icons/ModalPattern";
 import { CopyIcon } from "../../../../icons/CopyIcon";
-import { Box } from "@mui/material";
 
 export function ModalDesktop() {
   const { isModalOpened, setIsModalOpened } = useContext(Context);
+  const [isCopy, setIsCopy] = useState(false);
+
+  const handleCopy = () => {
+    copyTextToClipboard("89194066735");
+    setIsCopy(true);
+  };
 
   const copyTextToClipboard = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
-      alert("Текст успешно скопирован в буфер обмена!");
     } catch (err) {
       alert("Ошибка:");
     }
@@ -27,7 +29,7 @@ export function ModalDesktop() {
   if (isModalOpened) {
     return (
       <div className={s.root}>
-        <div className={s.modal_bg} />
+        <div className={s.modal_bg} onClick={() => setIsModalOpened(false)} />
         <div className={s.container}>
           <div
             className={s.close_button_container}
@@ -38,8 +40,8 @@ export function ModalDesktop() {
 
           <div className={s.text_container}>
             <span className={s.text}>
-              Звоните по номеру телефона или пишите <br/>в удобной для вас социальной
-              сети
+              Звоните по номеру телефона или пишите <br />в удобной для вас
+              социальной сети
             </span>
             <div className={s.admin}>
               <span style={{ fontSize: "32px" }}>
@@ -49,16 +51,28 @@ export function ModalDesktop() {
             </div>
           </div>
           <div className={s.number_container}>
-            <ModalPattern />
-            <span style={{ fontSize: "32px", fontWeight: "600" }}>
-              +7 919 406 67 35
-            </span>
-            <button
-              className={s.button_copy}
-              onClick={() => copyTextToClipboard("89194066735")}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
             >
-              <CopyIcon />
-            </button>
+              <ModalPattern />
+              <span style={{ fontSize: "32px", fontWeight: "600" }}>
+                +7 919 406 67 35
+              </span>
+            </div>
+            <div className={s.copy_container}>
+              {isCopy ? (
+                <span>телефон скопирован</span>
+              ) : (
+                <button className={s.button_copy} onClick={handleCopy}>
+                  <CopyIcon />
+                </button>
+              )}
+            </div>
           </div>
           <div className={s.socials_container}>
             <a href="https://vk.com/goalieacademy">

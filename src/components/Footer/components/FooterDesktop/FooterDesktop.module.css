@@ -77,9 +77,18 @@
     align-items: start;
     height: 200px;
     width: 100%;
-    max-width: 300px;
-    gap: 30px;
+    max-width: 500px;
+    gap: 10px;
     text-align: start;
+    list-style: none;
+  }
+
+  .nav_container li {
+    width: 120px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
   }
   .nav {
     font-size: 20px;

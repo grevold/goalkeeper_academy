@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { TRAININGS_SLIDES } from "../../../../../../constants";
+import { ButtonMain } from "../../../../../../components/ButtonMain/ButtonMain";
 
 export function TrainingsDesktop() {
   const [statusProgress, setStatusProgress] = useState(1);
@@ -40,6 +41,15 @@ export function TrainingsDesktop() {
           </SwiperSlide>
         ))}
       </Swiper>
+      <ButtonMain
+        text="Получить консультацию"
+        style={{
+          minWidth: "400px",
+          margin: "0 auto",
+          marginTop: "50px",
+          fontSize: "24px",
+        }}
+      />
     </div>
   );
 }
