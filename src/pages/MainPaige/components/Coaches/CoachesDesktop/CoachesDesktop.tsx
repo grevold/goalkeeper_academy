@@ -21,19 +21,8 @@ const achievements = [
 export function CoachesDesktop() {
   return (
     <div className={s.root} id="coaches">
-      <Stack sx={{ paddingLeft: "50px", paddingRight: "50px" }}>
-        <h2 className={s.header}>Тренерский состав</h2>
-      </Stack>
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        sx={{
-          width: "100%",
-          paddingLeft: "50px",
-          paddingRight: "50px",
-          overflow: "hidden",
-        }}
-      >
+      <h2 className={s.header}>Тренерский состав</h2>
+      <div className={s.info}>
         <Stack direction="column">
           <Stack direction="column" gap="10px">
             <span className={s.coach_name}>Чистяков Алексей Валерьевич</span>
@@ -83,7 +72,7 @@ export function CoachesDesktop() {
             <SmallPattern />
           </div>
         </Stack>
-      </Stack>
+      </div>
     </div>
   );
 }

@@ -6,9 +6,7 @@ import { SmallPattern } from "../../../../../icons/SmallPattern";
 export function CoachesMobile() {
   return (
     <div className={s.root}>
-      <Stack sx={{ paddingLeft: "50px" }}>
-        <h2 className={s.header}>Тренерский состав</h2>
-      </Stack>
+      <h2 className={s.header}>Тренерский состав</h2>
       <Stack
         direction="row"
         alignItems="start"

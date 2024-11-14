@@ -6,10 +6,10 @@ export function AboutUsMobile() {
   return (
     <div className={s.root}>
       <Stack style={{ width: "100%" }} pl="50px" pr="50px">
-        <Typography variant="h5" fontSize="24px" mb="14px">
+        <Typography variant="h5" fontSize="32px" mb="14px">
           <b>Кто мы такие?</b>
         </Typography>
-        <Typography mb="48px">
+        <Typography mb="20px">
           Вратарская академия - это пространство для развития хоккейных вратарей
         </Typography>
       </Stack>
@@ -31,7 +31,7 @@ export function AboutUsMobile() {
         style={{ width: "100%", maxWidth: "600px" }}
         pl="50px"
         pr="50px"
-        mt="48px"
+        mt="20px"
       >
         <Typography fontSize="14px" mb="20px">
           Современная игра диктует свои правила, первое из которых - идти в ногу

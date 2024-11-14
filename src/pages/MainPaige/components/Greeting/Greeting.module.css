@@ -7,16 +7,19 @@
 }
 :root {
   --swiper-navigation-color: rgb(255, 255, 255);
-  --swiper-pagination-color: rgb(255, 0, 0);
-  --swiper-pagination-bullet-bottom: 150px;
+  --swiper-pagination-color: #e52d27 !important;
   --swiper-pagination-bullet-border-radius: 50px;
-  --swiper-pagination-bullet-width: 80px;
-  --swiper-pagination-bullet-height: 10px;
+  --swiper-pagination-bullet-width: 50px !important;
+  --swiper-pagination-bullet-height: 15px !important;
   --swiper-pagination-bullet-inactive-color: #ffffff;
   --swiper-pagination-bullet-inactive-opacity: 0.8;
   --swiper-pagination-bullet-opacity: 1;
-  --swiper-pagination-bullet-horizontal-gap: 10px;
-  --swiper-pagination-bullet-vertical-gap: 16px;
+  --swiper-pagination-bullet-horizontal-gap: 10px !important;
+  --swiper-pagination-bullet-vertical-gap: 100px !important;
+  --swiper-pagination-bottom: 10px !important;
+}
+.swiper-pagination {
+  top: 2px;
 }
 
 .slide_container {
@@ -43,9 +46,9 @@
   position: absolute;
   width: 150px;
   height: 50px;
-  border: 2px solid red;
+  border: 2px solid #e52d27;
   border-radius: 10px;
-  background: red;
+  background: #e52d27;
   font-size: 16px;
   font-weight: 600;
   bottom: 60px;
@@ -96,7 +99,7 @@
   }
   .slide_container_text {
     left: 100px;
-    bottom: 200px;
+    bottom: 250px;
   }
   .slide_header {
     font-size: 60px;
@@ -110,5 +113,6 @@
     height: 80px;
     font-size: 20px;
     border-radius: 20px;
+    bottom: 150px;
   }
 }

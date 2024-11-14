@@ -1,4 +1,4 @@
-export function CloseMenuIcon() {
+export function CloseCross() {
   return (
     <svg
       width="49"
@@ -12,7 +12,7 @@ export function CloseMenuIcon() {
         y1="12.9792"
         x2="12.0208"
         y2="37.0208"
-        stroke="#e52d27"
+        stroke="white"
         strokeWidth="4"
       />
       <line
@@ -20,7 +20,7 @@ export function CloseMenuIcon() {
         y1="37.0207"
         x2="12.0207"
         y2="12.979"
-        stroke="#e52d27"
+        stroke="white"
         strokeWidth="4"
       />
     </svg>

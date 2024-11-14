@@ -1,0 +1,140 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 120px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: 100px;
+}
+
+.student_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.photos_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+}
+
+.photo_coach {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.photo_hockey {
+  position: absolute;
+  z-index: 2;
+  bottom: 30px;
+  right: 0;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.description {
+  width: 100%;
+  max-width: 300px;
+}
+
+.header {
+  font-size: 32px;
+  margin-left: 50px;
+}
+
+.red_square {
+  background-color: #e52d27;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  z-index: 1;
+  top: -35px;
+}
+
+.button_container {
+  margin-top: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  .header {
+    margin-left: 100px;
+  }
+}
+
+@media (min-width: 900px) {
+  .root {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .container {
+    align-items: start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .header {
+    font-size: 32px;
+    margin-left: 0px;
+  }
+  .photos_container {
+    width: 250px;
+  }
+  .description {
+    max-width: 200px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    font-size: 48px;
+    margin-left: 0px;
+  }
+  .container {
+    padding: 0;
+  }
+  .root {
+    align-items: start;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .photos_container {
+    width: 300px;
+  }
+  .description {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .header {
+    font-size: 48px;
+    margin-left: 0px;
+  }
+}

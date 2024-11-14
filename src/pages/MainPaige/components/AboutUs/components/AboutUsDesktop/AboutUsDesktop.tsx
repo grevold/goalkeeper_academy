@@ -23,10 +23,10 @@ export function AboutUsDesktop() {
   return (
     <div className={s.root}>
       <div className={s.text_container}>
-        <Stack style={{ width: "100%" }} pl="50px" pr="50px">
-          <Typography variant="h5" fontSize="32px" mb="14px">
+        <div style={{ width: "100%" }}>
+          <h2 className={s.header}>
             <b>Кто мы такие?</b>
-          </Typography>
+          </h2>
 
           <span className={s.sub_title}>
             Вратарская академия - это пространство для развития хоккейных
@@ -43,7 +43,7 @@ export function AboutUsDesktop() {
             к самосовершенствованию и развитию необходимых навыков, благодаря
             помощи настоящих профессионалов своего дела.
           </span>
-        </Stack>
+        </div>
       </div>
 
       <div className={s.image_container}>
