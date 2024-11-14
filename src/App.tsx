@@ -6,18 +6,24 @@ import { createContext, useMemo, useState } from "react";
 interface IContext {
   isModalOpened: boolean;
   setIsModalOpened: (isModalOpened: boolean) => void;
+  isAlert: boolean;
+  setIsAlert: (isAlert: boolean) => void;
 }
 
 export const Context = createContext<IContext>({
   isModalOpened: false,
   setIsModalOpened: () => undefined,
+  isAlert: false,
+  setIsAlert: () => undefined,
 });
 
 function App() {
   const [isModalOpened, setIsModalOpened] = useState(false);
+  const [isAlert, setIsAlert] = useState(false);
+
   const value = useMemo<IContext>(
-    () => ({ isModalOpened, setIsModalOpened }),
-    [isModalOpened]
+    () => ({ isModalOpened, setIsModalOpened, isAlert, setIsAlert }),
+    [isModalOpened, isAlert]
   );
   return (
     <Context.Provider value={value}>

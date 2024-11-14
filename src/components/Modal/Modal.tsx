@@ -7,6 +7,7 @@ const bodyScrollLock = require("body-scroll-lock");
 
 export function Modal() {
   const { isModalOpened, setIsModalOpened } = useContext(Context);
+  
 
   const refBody = useRef(null);
   const disableBodyScroll = bodyScrollLock.disableBodyScroll;

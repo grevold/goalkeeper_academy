@@ -19,9 +19,15 @@ export function Students() {
           </div>
         ))}
       </div>
-      <div className={s.button_container}>
-        <ButtonMain text="Стать чемпионом!" />
-      </div>
+      <ButtonMain
+        text="Стать чемпионом"
+        style={{
+          minWidth: "300px",
+          margin: "0 auto",
+          marginTop: "80px",
+          fontSize: "24px",
+        }}
+      />
     </div>
   );
 }

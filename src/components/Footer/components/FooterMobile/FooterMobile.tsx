@@ -8,6 +8,16 @@ import { WAPPIcon } from "../../../../icons/socials/WAPPIcon";
 import { RTIcon } from "../../../../icons/socials/RTIcon";
 
 export function FooterMobile() {
+  const scrollToBlock = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "start",
+      });
+    }
+  };
   return (
     <footer className={s.root}>
       <Stack
@@ -55,7 +65,11 @@ export function FooterMobile() {
         mt="50px"
       >
         {NAV.map((navItem) => (
-          <Typography key={navItem.title} sx={{ width: "100px" }}>
+          <Typography
+            key={navItem.title}
+            sx={{ width: "100px" }}
+            onClick={() => scrollToBlock(navItem.href)}
+          >
             {navItem.title}
           </Typography>
         ))}
