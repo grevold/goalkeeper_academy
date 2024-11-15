@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Progress } from "../Progress/Progress";
 import s from "./TrainingsDesktop.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,13 +9,21 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { TRAININGS_SLIDES } from "../../../../../../constants";
 import { ButtonMain } from "../../../../../../components/ButtonMain/ButtonMain";
+import { useInView } from "framer-motion";
 
 export function TrainingsDesktop() {
   const [statusProgress, setStatusProgress] = useState(1);
+  const refAnimationTrainings = useRef(null);
+  const isInViewTRainings = useInView(refAnimationTrainings, { once: true });
   return (
-    <div className={s.root} id="trainings">
+    <div
+      className={s.root}
+      id="trainings"
+      ref={refAnimationTrainings}
+      style={{ opacity: isInViewTRainings ? 1 : 0, transition: "opacity 2s" }}
+    >
       <h2 className={s.header}>Наша формула успеха вратарей-воспитанников</h2>
-      <Progress status={statusProgress} />
+      <Progress status={statusProgress} changeStatus={setStatusProgress} />
       <Swiper
         className={s.swiper}
         spaceBetween={50}

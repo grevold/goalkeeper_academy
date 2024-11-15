@@ -6,14 +6,18 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { GREETING_SLIDES } from "../../../../constants";
-import { useContext } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Context } from "../../../../App";
+import { CircularProgress } from "@mui/material";
 
 export function Greeting() {
   const { isModalOpened, setIsModalOpened } = useContext(Context);
+  const [isLoadedVideo, setIsLoadedVideo] = useState(false);
+
   return (
     <div id="greeting">
       <Swiper
+        autoplay
         loop
         className={s.swiper}
         spaceBetween={50}
@@ -36,9 +40,21 @@ export function Greeting() {
                 Записаться
               </button>
               <div className={s.image_slide_container}>
+                <video
+                  className={isLoadedVideo ? s.video : s.video_disable}
+                  autoPlay
+                  muted
+                  loop
+                  onPlay={() => setIsLoadedVideo(true)}
+                >
+                  <source
+                    src={`${process.env.PUBLIC_URL}/${slide.video}`}
+                    type="video/mp4"
+                  />
+                </video>
                 <img
-                  className={s.image_slide}
-                  src={`${process.env.PUBLIC_URL}/${slide.img}`}
+                  src={`${process.env.PUBLIC_URL}/${slide.preview}`}
+                  className={s.preview}
                 />
               </div>
             </div>
@@ -47,4 +63,11 @@ export function Greeting() {
       </Swiper>
     </div>
   );
+}
+
+{
+  /* <img
+                      className={s.image_slide}
+                      src={`${process.env.PUBLIC_URL}/${slide.preview}`}
+                    /> */
 }

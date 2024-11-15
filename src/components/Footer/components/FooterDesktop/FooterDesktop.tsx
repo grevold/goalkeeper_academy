@@ -6,6 +6,8 @@ import { WAPPIcon } from "../../../../icons/socials/WAPPIcon";
 import { RTIcon } from "../../../../icons/socials/RTIcon";
 import { Box, Button, Divider, Stack, Typography } from "@mui/material";
 import { NAV } from "../../../../constants";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 export function FooterDesktop() {
   const scrollToBlock = (href: string) => {
@@ -18,10 +20,19 @@ export function FooterDesktop() {
       });
     }
   };
+  const refAnimationFooter = useRef(null);
+  const isInViewFooter = useInView(refAnimationFooter, { once: true });
   return (
     <>
       <hr className={s.divider} />
-      <footer className={s.root}>
+      <footer
+        className={s.root}
+        ref={refAnimationFooter}
+        style={{
+          opacity: isInViewFooter ? 1 : 0,
+          transition: `opacity 2s`,
+        }}
+      >
         <div className={s.logos_container}>
           <img
             className={s.logo}

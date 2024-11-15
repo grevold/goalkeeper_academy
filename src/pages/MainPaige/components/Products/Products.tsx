@@ -6,7 +6,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { PRODUCTS } from "../../../../constants";
 import { ButtonMain } from "../../../../components/ButtonMain/ButtonMain";
-import { Stack } from "@mui/material";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 export function Products() {
   const params = {
@@ -19,13 +20,18 @@ export function Products() {
       },
     },
   };
+  const refAnimationProducts = useRef(null);
+  const isInViewProducts = useInView(refAnimationProducts, { once: true });
   return (
-    <div className={s.root}>
+    <div
+      className={s.root}
+      ref={refAnimationProducts}
+      style={{ opacity: isInViewProducts ? 1 : 0, transition: "opacity 2s" }}
+    >
       <h2 className={s.header}>Наши услуги</h2>
       <Swiper
         loop
         className={s.swiper}
-      
         slidesPerView={1}
         modules={[Navigation]}
         navigation

@@ -1,24 +1,15 @@
-import { Stack, Typography } from "@mui/material";
+
 import s from "./AboutUsDesktop.module.css";
 import { Pattern } from "../../../../../../icons/Pattern";
-import { useEffect, useState } from "react";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 export function AboutUsDesktop() {
-  const [scrollPattern, setScrollPattern] = useState(-10);
+  const refAnimationGoalkeeper = useRef(null);
+  const isInViewGoalkeeper = useInView(refAnimationGoalkeeper, { once: true });
 
-  useEffect(() => {
-    const handleScroll = (event: any) => {
-      setScrollPattern((scrollPattern) => {
-        if (scrollPattern > -4) {
-          return scrollPattern - 1;
-        } else {
-          return -4;
-        }
-      });
-    };
-    window.addEventListener("mousewheel", handleScroll);
-    return () => window.removeEventListener("mousewheel", handleScroll);
-  }, []);
+  const refAnimationPattern = useRef(null);
+  const isInViewPattern = useInView(refAnimationPattern, { once: true });
 
   return (
     <div className={s.root}>
@@ -46,14 +37,25 @@ export function AboutUsDesktop() {
         </div>
       </div>
 
-      <div className={s.image_container}>
+      <div className={s.image_container} ref={refAnimationGoalkeeper}>
         <img
           className={s.image}
           src={`${process.env.PUBLIC_URL}/images/aboutus/about_us_goalkeeper.png`}
+          style={{
+            right: isInViewGoalkeeper ? -300 : -600,
+            transition: "right 1s",
+          }}
         />
       </div>
 
-      <div className={s.pattern} style={{ right: `${scrollPattern * 50}px` }}>
+      <div
+        ref={refAnimationPattern}
+        className={s.pattern}
+        style={{
+          right: isInViewPattern ? -100 : -600,
+          transition: "right 1s",
+        }}
+      >
         <Pattern width={"463"} height={"243"} />
       </div>
     </div>

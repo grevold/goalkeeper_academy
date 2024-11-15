@@ -7,6 +7,8 @@ import "swiper/css/navigation";
 import { PRODUCTS, REVIEWS } from "../../../../constants";
 import { ButtonMain } from "../../../../components/ButtonMain/ButtonMain";
 import { Stack } from "@mui/material";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 export function Reviews() {
   const params = {
@@ -19,8 +21,15 @@ export function Reviews() {
       },
     },
   };
+  const refAnimationReviews = useRef(null);
+  const isInViewReviews = useInView(refAnimationReviews, { once: true });
   return (
-    <div className={s.root} id="reviews">
+    <div
+      className={s.root}
+      id="reviews"
+      ref={refAnimationReviews}
+      style={{ opacity: isInViewReviews ? 1 : 0, transition: "opacity 2s" }}
+    >
       <h2 className={s.header}>Отзывы</h2>
       <Swiper
         loop

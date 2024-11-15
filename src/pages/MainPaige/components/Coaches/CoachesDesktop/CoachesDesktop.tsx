@@ -1,7 +1,8 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import s from "./CoachesDesktop.module.css";
 import { SmallPattern } from "../../../../../icons/SmallPattern";
-import { useEffect, useState } from "react";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 const achievements = [
   {
@@ -19,6 +20,12 @@ const achievements = [
 ];
 
 export function CoachesDesktop() {
+  const refAnimationCoach = useRef(null);
+  const isInViewCoach = useInView(refAnimationCoach, { once: true });
+
+  const refAnimationPattern = useRef(null);
+  const isInViewPattern = useInView(refAnimationPattern, { once: true });
+  console.log(isInViewCoach);
   return (
     <div className={s.root} id="coaches">
       <h2 className={s.header}>Тренерский состав</h2>
@@ -58,20 +65,33 @@ export function CoachesDesktop() {
           </Stack>
         </Stack>
 
-        <Stack sx={{ position: "relative" }}>
-          <div className={s.image_container}>
-            <Box
-              component="img"
-              sx={{ width: "100%" }}
+        <div style={{ position: "relative" }}>
+          <div
+            className={s.image_container}
+            ref={refAnimationCoach}
+            style={{
+              marginRight: isInViewCoach ? "60px" : "0px",
+              transition: "margin-right 1s",
+            }}
+          >
+            <img
+              className={s.image}
               src={`${process.env.PUBLIC_URL}/images/coaches/trener.png`}
-              style={{ zIndex: 2 }}
+              style={{ zIndex: "2" }}
             />
           </div>
 
-          <div className={s.pattern}>
+          <div
+            className={s.pattern}
+            ref={refAnimationPattern}
+            style={{
+              marginRight: isInViewPattern ? "100px" : "10px",
+              transition: "margin-right 2s",
+            }}
+          >
             <SmallPattern />
           </div>
-        </Stack>
+        </div>
       </div>
     </div>
   );

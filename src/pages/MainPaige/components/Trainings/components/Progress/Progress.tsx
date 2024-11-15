@@ -2,9 +2,10 @@ import s from "./Progress.module.css";
 
 interface Props {
   status: number;
+  changeStatus: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export function Progress({ status }: Props) {
+export function Progress({ status, changeStatus }: Props) {
   if (status === 1) {
     return (
       <div className={s.root}>

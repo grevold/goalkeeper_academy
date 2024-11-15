@@ -1,8 +1,13 @@
 import { Box, Stack, Typography } from "@mui/material";
 import s from "./AboutUsMobile.module.css";
 import { Pattern } from "../../../../../../icons/Pattern";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 export function AboutUsMobile() {
+  const refAnimationGoalkeeper = useRef(null);
+  const isInViewGoalkeeper = useInView(refAnimationGoalkeeper, { once: true });
+
   return (
     <div className={s.root}>
       <Stack style={{ width: "100%" }} pl="50px" pr="50px">
@@ -14,12 +19,17 @@ export function AboutUsMobile() {
         </Typography>
       </Stack>
 
-      <div className={s.image_container}>
+      <div className={s.image_container} ref={refAnimationGoalkeeper}>
         <Box
           component="img"
           sx={{ width: "100%" }}
           src={`${process.env.PUBLIC_URL}/images/aboutus/about_us_goalkeeper.png`}
-          style={{ position: "absolute", zIndex: "2" }}
+          style={{
+            position: "absolute",
+            zIndex: "2",
+            right: isInViewGoalkeeper ? 0 : -600,
+            transition: "right 1s",
+          }}
         />
 
         <div>
