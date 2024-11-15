@@ -8,10 +8,18 @@ import { TGIcon } from "../../../../../icons/socials/TGIcon";
 import { WAPPIcon } from "../../../../../icons/socials/WAPPIcon";
 import { RTIcon } from "../../../../../icons/socials/RTIcon";
 import { text } from "stream/consumers";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 export function ContactsMobile() {
+  const refAnimationContacts = useRef(null);
+  const isInViewContacts = useInView(refAnimationContacts, { once: true });
   return (
-    <div className={s.root}>
+    <div
+      className={s.root}
+      ref={refAnimationContacts}
+      style={{ opacity: isInViewContacts ? 1 : 0, transition: "opacity 2s" }}
+    >
       <h2 className={s.header}>Контакты</h2>
       <Stack
         direction="row"
@@ -46,7 +54,7 @@ export function ContactsMobile() {
         Звоните по номеру телефона или пишите в удобной для вас социальной сети
       </span>
       <div className={s.button_container}>
-        <a href="tel:+79194066735" >
+        <a href="tel:+79194066735">
           <ButtonMain
             call={true}
             text="Позвонить"

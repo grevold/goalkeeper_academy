@@ -2,10 +2,18 @@ import { Box, Stack, Typography } from "@mui/material";
 import s from "./CoachesMobile.module.css";
 import { Pattern } from "../../../../../icons/Pattern";
 import { SmallPattern } from "../../../../../icons/SmallPattern";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 export function CoachesMobile() {
+  const refAnimationCoaches = useRef(null);
+  const isInViewCoaches = useInView(refAnimationCoaches, { once: true });
   return (
-    <div className={s.root}>
+    <div
+      className={s.root}
+      ref={refAnimationCoaches}
+      style={{ opacity: isInViewCoaches ? 1 : 0, transition: "opacity 2s" }}
+    >
       <h2 className={s.header}>Тренерский состав</h2>
       <Stack
         direction="row"

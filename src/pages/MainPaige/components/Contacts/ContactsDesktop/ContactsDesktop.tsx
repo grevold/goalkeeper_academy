@@ -1,15 +1,14 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import s from "./ContactsDesktop.module.css";
-import { Pattern } from "../../../../../icons/Pattern";
 import { SmallPattern } from "../../../../../icons/SmallPattern";
-import { ButtonMain } from "../../../../../components/ButtonMain/ButtonMain";
 import { VKIcon } from "../../../../../icons/socials/VKIcon";
 import { TGIcon } from "../../../../../icons/socials/TGIcon";
 import { WAPPIcon } from "../../../../../icons/socials/WAPPIcon";
 import { RTIcon } from "../../../../../icons/socials/RTIcon";
-import { text } from "stream/consumers";
 import { ModalPattern } from "../../../../../icons/ModalPattern";
 import { CopyIcon } from "../../../../../icons/CopyIcon";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 export function ContactsDesktop() {
   const copyTextToClipboard = async (text: string) => {
@@ -20,6 +19,11 @@ export function ContactsDesktop() {
       alert("Ошибка:");
     }
   };
+  const refAnimationCoach = useRef(null);
+  const isInViewCoach = useInView(refAnimationCoach, { once: true });
+
+  const refAnimationPattern = useRef(null);
+  const isInViewPattern = useInView(refAnimationPattern, { once: true });
   return (
     <div className={s.root}>
       <h2 className={s.header}>Контакты</h2>
@@ -28,8 +32,8 @@ export function ContactsDesktop() {
           <span className={s.coach_name}>Александр</span>
           <span className={s.rank}>Руководитель проекта</span>
           <span className={s.text}>
-            Звоните по номеру телефона или пишите <br/>в удобной для вас социальной
-            сети
+            Звоните по номеру телефона или пишите <br />в удобной для вас
+            социальной сети
           </span>
           <div className={s.number_container}>
             <ModalPattern />
@@ -45,7 +49,14 @@ export function ContactsDesktop() {
           </div>
         </div>
         <Stack sx={{ position: "relative" }}>
-          <div className={s.image_container}>
+          <div
+            className={s.image_container}
+            ref={refAnimationCoach}
+            style={{
+              marginRight: isInViewCoach ? "100px" : "0px",
+              transition: "margin-right 1s",
+            }}
+          >
             <Box
               component="img"
               sx={{ width: "100%" }}
@@ -54,7 +65,14 @@ export function ContactsDesktop() {
             />
           </div>
 
-          <div className={s.pattern}>
+          <div
+            className={s.pattern}
+            ref={refAnimationPattern}
+            style={{
+              marginRight: isInViewPattern ? "100px" : "10px",
+              transition: "margin-right 2s",
+            }}
+          >
             <SmallPattern />
           </div>
         </Stack>
