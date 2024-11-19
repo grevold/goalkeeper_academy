@@ -19,14 +19,14 @@ export const GREETING_SLIDES = [
     title: "Тренировки на земле",
     description:
       "ОФП, упражнения с акцентом на координацию и реакцию, увеличение амплитуды движений вратаря",
-    video: "videos/footage_2.mp4",
+    video: "videos/footage_1.mp4",
     preview: "images/greeting/footage_2.jpg",
   },
   {
-    title: "Тренировки с шайбометом",
+    title: "Подготовка вне льда",
     description:
-      "Техника отбивания/ловли шайбы, правильная постановка рук, визуальный контроль шайбы, переключение внимания",
-    video: "videos/footage_3.mp4",
+      "Тренировки с шайбометом: техника отбивания/ловли шайбы, правильная постановка рук, визуальный контроль шайбы, переключение внимания",
+    video: "videos/footage_1.mp4",
     preview: "images/greeting/footage_3.jpg",
   },
 ];
