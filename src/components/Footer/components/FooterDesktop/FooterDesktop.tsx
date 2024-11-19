@@ -38,26 +38,36 @@ export function FooterDesktop() {
             className={s.logo}
             src={`${process.env.PUBLIC_URL}/images/logo_footer_mobile.png`}
           />
-
-          <Stack
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
+          <a
+            href="https://chlhl.ru/"
+            rel="noopener noreferrer"
+            target="_blank"
+            style={{ cursor: "pointer", textDecoration: "none" }}
           >
-            <Box
-              component="img"
-              sx={{ width: "80px" }}
-              src={`${process.env.PUBLIC_URL}/images/footer/chlhl.png`}
-            />
-            <Typography
-              sx={{ maxWidth: "150px", textAlign: "center", fontSize: "14px" }}
+            <Stack
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
             >
-              При поддержке <b>Челябинской Любительской Хоккейной Лиги</b>
-            </Typography>
-          </Stack>
+              <Box
+                component="img"
+                sx={{ width: "80px" }}
+                src={`${process.env.PUBLIC_URL}/images/footer/chlhl.png`}
+              />
+              <Typography
+                sx={{
+                  maxWidth: "150px",
+                  textAlign: "center",
+                  fontSize: "14px",
+                }}
+              >
+                При поддержке <b>Челябинской Любительской Хоккейной Лиги</b>
+              </Typography>
+            </Stack>
+          </a>
         </div>
 
         <ul className={s.nav_container}>

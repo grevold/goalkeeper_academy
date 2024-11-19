@@ -8,7 +8,6 @@ import "swiper/css/pagination";
 import { GREETING_SLIDES } from "../../../../constants";
 import { useContext, useEffect, useRef, useState } from "react";
 import { Context } from "../../../../App";
-import { CircularProgress } from "@mui/material";
 
 export function Greeting() {
   const { isModalOpened, setIsModalOpened } = useContext(Context);
@@ -39,6 +38,7 @@ export function Greeting() {
               >
                 Записаться
               </button>
+              <div className={s.shadow} />
               <div className={s.image_slide_container}>
                 <video
                   className={isLoadedVideo ? s.video : s.video_disable}

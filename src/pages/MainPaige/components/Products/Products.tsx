@@ -84,6 +84,20 @@ export function Products() {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className={s.price_container_pdf}>
+        <span>Скачайте полный прайс-лист</span>
+        <div className={s.price_button_container_pdf}>
+          <a
+            className={s.button_pdf}
+            href={"price.pdf"}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Скачать{" "}
+            <img src="images/products/pdf_icon.png" className={s.pdf_icon} />
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
