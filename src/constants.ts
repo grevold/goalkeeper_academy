@@ -13,21 +13,21 @@ export const GREETING_SLIDES = [
     description:
       "Техника отбивания/ловли шайбы, перемещения в воротах, катание",
     video: "videos/footage_1.mp4",
-    preview: "images/greeting/footage_1.jpg",
+    preview: "images/greeting/footage_1.png",
   },
   {
     title: "Тренировки на земле",
     description:
       "ОФП, упражнения с акцентом на координацию и реакцию, увеличение амплитуды движений вратаря",
-    video: "videos/footage_1.mp4",
-    preview: "images/greeting/footage_2.jpg",
+    video: "videos/footage_2.mp4",
+    preview: "images/greeting/footage_2.png",
   },
   {
     title: "Подготовка вне льда",
     description:
       "Тренировки с шайбометом: техника отбивания/ловли шайбы, правильная постановка рук, визуальный контроль шайбы, переключение внимания",
-    video: "videos/footage_1.mp4",
-    preview: "images/greeting/footage_3.jpg",
+    video: "videos/footage_3.mp4",
+    preview: "images/greeting/footage_3.png",
   },
 ];
 
