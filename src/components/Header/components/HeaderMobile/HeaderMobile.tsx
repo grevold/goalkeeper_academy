@@ -8,7 +8,6 @@ import { Context } from "../../../../App";
 const bodyScrollLock = require("body-scroll-lock");
 
 export function HeaderMobile() {
-  
   const [state, setState] = useState(NAV[0].title);
   const refBody = useRef(null);
   const disableBodyScroll = bodyScrollLock.disableBodyScroll;
@@ -43,11 +42,21 @@ export function HeaderMobile() {
     <div className={s.container} ref={refBody}>
       <header className={s.root}>
         <div className={s.button_container}>
-          <Box
-            component="img"
-            sx={{ width: "50px" }}
-            src={`${process.env.PUBLIC_URL}/images/logo_mini.png`}
-          />
+          <div className={s.logo_container}>
+            <Box
+              component="img"
+              sx={{ width: "50px" }}
+              src={`${process.env.PUBLIC_URL}/images/logo_mini.png`}
+            />
+            <span>
+              ВРАТАРСКАЯ
+              <br />
+              АКАДЕМИЯ
+              <br />
+              ЧЕЛЯБИНСК
+            </span>
+          </div>
+
           <button onClick={handleClick} className={s.button}>
             {isOpenedMenu ? <CloseMenuIcon /> : <BurgerIcon />}
           </button>

@@ -44,7 +44,7 @@ export function Products() {
               <div className={s.card}>
                 <h2 className={s.slide_header}>{product.title}</h2>
                 <div className={s.img_container}>
-                  <img src={product.img} />
+                  <img src={`${process.env.PUBLIC_URL}/${product.img}`} />
                 </div>
                 <div className={s.description}>
                   <div className={s.price_container}>
@@ -94,7 +94,10 @@ export function Products() {
             target="_blank"
           >
             Скачать{" "}
-            <img src="images/products/pdf_icon.png" className={s.pdf_icon} />
+            <img
+              src={`${process.env.PUBLIC_URL}/images/products/pdf_icon.png`}
+              className={s.pdf_icon}
+            />
           </a>
         </div>
       </div>

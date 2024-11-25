@@ -22,8 +22,8 @@ export function Students() {
           >
             <div className={s.photos_container}>
               <div className={s.red_square}></div>
-              <img src={student.photoCoach} className={s.photo_coach} />
-              <img src={student.photoHockey} className={s.photo_hockey} />
+              <img src={`${process.env.PUBLIC_URL}/${student.photoCoach}`} className={s.photo_coach} />
+              <img src={`${process.env.PUBLIC_URL}/${student.photoHockey}`} className={s.photo_hockey} />
             </div>
             <span className={s.name}>{student.name}</span>
             <span className={s.description}>{student.description}</span>
