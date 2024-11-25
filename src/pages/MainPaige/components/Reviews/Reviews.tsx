@@ -43,7 +43,7 @@ export function Reviews() {
           <SwiperSlide key={review}>
             <div className={s.slide_container}>
               <div className={s.card}>
-                <img src={review} />
+                <img src={`${process.env.PUBLIC_URL}/${review}`} />
               </div>
             </div>
           </SwiperSlide>

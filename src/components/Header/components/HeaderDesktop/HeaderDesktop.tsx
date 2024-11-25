@@ -25,11 +25,21 @@ export function HeaderDesktop() {
           alignItems: "center",
         }}
       >
-        <Box
-          component="img"
-          sx={{ width: "50px" }}
-          src={`${process.env.PUBLIC_URL}/images/logo_mini.png`}
-        />
+        <div className={s.logo_container}>
+          <Box
+            component="img"
+            sx={{ width: "50px" }}
+            src={`${process.env.PUBLIC_URL}/images/logo_mini.png`}
+          />
+          <span>
+            ВРАТАРСКАЯ
+            <br />
+            АКАДЕМИЯ
+            <br />
+            ЧЕЛЯБИНСК
+          </span>
+        </div>
+
         <ul className={s.nav_list}>
           {NAV.map((navItem) => (
             <li
