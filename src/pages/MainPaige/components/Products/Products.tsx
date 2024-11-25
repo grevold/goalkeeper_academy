@@ -89,7 +89,7 @@ export function Products() {
         <div className={s.price_button_container_pdf}>
           <a
             className={s.button_pdf}
-            href={"price.pdf"}
+            href={`${process.env.PUBLIC_URL}/price.pdf`}
             rel="noopener noreferrer"
             target="_blank"
           >

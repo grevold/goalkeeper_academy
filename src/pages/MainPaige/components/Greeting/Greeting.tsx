@@ -31,15 +31,16 @@ export function Greeting() {
               <div className={s.slide_container_text}>
                 <h2 className={s.slide_header}>{slide.title}</h2>
                 <span className={s.slide_description}>{slide.description}</span>
+                <button
+                  className={s.button}
+                  onClick={() => setIsModalOpened(true)}
+                >
+                  Записаться
+                </button>
               </div>
-              <button
-                className={s.button}
-                onClick={() => setIsModalOpened(true)}
-              >
-                Записаться
-              </button>
-              <div className={s.shadow} />
+
               <div className={s.image_slide_container}>
+                <div className={s.shadow} />
                 <video
                   className={isLoadedVideo ? s.video : s.video_disable}
                   autoPlay
@@ -52,9 +53,10 @@ export function Greeting() {
                     type="video/mp4"
                   />
                 </video>
+
                 <img
                   src={`${process.env.PUBLIC_URL}/${slide.preview}`}
-                  className={s.preview}
+                  className={isLoadedVideo ? s.preview_disable : s.preview}
                 />
               </div>
             </div>
