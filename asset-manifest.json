@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/goalkeeper_academy/static/css/main.24722715.css",
-    "main.js": "/goalkeeper_academy/static/js/main.b50fbeab.js",
+    "main.js": "/goalkeeper_academy/static/js/main.c33fb62e.js",
     "static/js/453.3a40b424.chunk.js": "/goalkeeper_academy/static/js/453.3a40b424.chunk.js",
     "index.html": "/goalkeeper_academy/index.html",
     "main.24722715.css.map": "/goalkeeper_academy/static/css/main.24722715.css.map",
-    "main.b50fbeab.js.map": "/goalkeeper_academy/static/js/main.b50fbeab.js.map",
+    "main.c33fb62e.js.map": "/goalkeeper_academy/static/js/main.c33fb62e.js.map",
     "453.3a40b424.chunk.js.map": "/goalkeeper_academy/static/js/453.3a40b424.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.24722715.css",
-    "static/js/main.b50fbeab.js"
+    "static/js/main.c33fb62e.js"
   ]
 }
