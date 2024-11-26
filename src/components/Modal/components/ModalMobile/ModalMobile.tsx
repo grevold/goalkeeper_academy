@@ -30,7 +30,7 @@ export function ModalMobile() {
             </span>
             <div className={s.admin}>
               <span style={{ fontSize: "24px" }}>
-                <b>Александр</b>
+                <b>Борисенко Александр</b>
               </span>
               <span>Администратор проекта</span>
             </div>

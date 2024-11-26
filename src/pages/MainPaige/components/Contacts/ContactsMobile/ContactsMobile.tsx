@@ -32,7 +32,7 @@ export function ContactsMobile() {
         }}
       >
         <div className={s.text_container}>
-          <span className={s.coach_name}>Александр</span>
+          <span className={s.coach_name}>Борисенко Александр</span>
           <span className={s.rank}>Руководитель проекта</span>
         </div>
         <Stack sx={{ position: "relative" }}>
