@@ -79,10 +79,18 @@ export function FooterDesktop() {
         </ul>
 
         <div className={s.socials_container}>
-          <VKIcon />
-          <TGIcon />
-          <WAPPIcon />
-          <RTIcon />
+          <a href="https://vk.com/goalieacademy">
+            <VKIcon />
+          </a>
+          <a href="https://t.me/goalieacademy">
+            <TGIcon />
+          </a>
+          <a href="https://wa.me/79194066735">
+            <WAPPIcon />
+          </a>
+          <a href="https://rutube.ru/channel/42988847/">
+            <RTIcon />
+          </a>
         </div>
       </footer>
     </>

@@ -33,25 +33,27 @@ export function FooterMobile() {
           sx={{ width: "132px" }}
           src={`${process.env.PUBLIC_URL}/images/logo_footer_mobile.png`}
         />
-        <Stack
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <Box
-            component="img"
-            sx={{ width: "80px" }}
-            src={`${process.env.PUBLIC_URL}/images/footer/chlhl.png`}
-          />
-          <Typography
-            sx={{ maxWidth: "150px", textAlign: "center", fontSize: "14px" }}
+        <a href="https://chlhl.ru/" style={{ cursor: "pointer", textDecoration: "none" }}>
+          <Stack
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
           >
-            При поддержке <b>Челябинской Любительской Хоккейной Лиги</b>
-          </Typography>
-        </Stack>
+            <Box
+              component="img"
+              sx={{ width: "80px" }}
+              src={`${process.env.PUBLIC_URL}/images/footer/chlhl.png`}
+            />
+            <Typography
+              sx={{ maxWidth: "150px", textAlign: "center", fontSize: "14px" }}
+            >
+              При поддержке <b>Челябинской Любительской Хоккейной Лиги</b>
+            </Typography>
+          </Stack>
+        </a>
       </Stack>
       <Stack
         sx={{
@@ -100,10 +102,18 @@ export function FooterMobile() {
           }}
           mb="30px"
         >
-          <VKIcon />
-          <TGIcon />
-          <WAPPIcon />
-          <RTIcon />
+          <a href="https://vk.com/goalieacademy">
+            <VKIcon />
+          </a>
+          <a href="https://t.me/goalieacademy">
+            <TGIcon />
+          </a>
+          <a href="https://wa.me/79194066735">
+            <WAPPIcon />
+          </a>
+          <a href="https://rutube.ru/channel/42988847/">
+            <RTIcon />
+          </a>
         </Stack>
         <Button
           sx={{
@@ -115,6 +125,7 @@ export function FooterMobile() {
             color: "white",
             fontSize: "20px",
           }}
+          href="tel:+79194066735"
         >
           Позвонить
         </Button>
