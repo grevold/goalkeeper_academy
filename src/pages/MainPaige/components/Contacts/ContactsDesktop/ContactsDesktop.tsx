@@ -29,7 +29,7 @@ export function ContactsDesktop() {
       <h2 className={s.header}>Контакты</h2>
       <div className={s.info_container}>
         <div className={s.text_container}>
-          <span className={s.coach_name}>Александр</span>
+          <span className={s.coach_name}>Борисенко Александр</span>
           <span className={s.rank}>Руководитель проекта</span>
           <span className={s.text}>
             Звоните по номеру телефона или пишите <br />в удобной для вас

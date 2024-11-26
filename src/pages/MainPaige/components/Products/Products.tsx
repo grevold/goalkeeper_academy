@@ -28,7 +28,7 @@ export function Products() {
       ref={refAnimationProducts}
       style={{ opacity: isInViewProducts ? 1 : 0, transition: "opacity 2s" }}
     >
-      <h2 className={s.header}>Наши услуги</h2>
+      <h2 className={s.header}>Стоимость занятий</h2>
       <Swiper
         loop
         className={s.swiper}

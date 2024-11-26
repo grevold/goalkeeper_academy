@@ -45,7 +45,7 @@ export function ModalDesktop() {
             </span>
             <div className={s.admin}>
               <span style={{ fontSize: "32px" }}>
-                <b>Александр</b>
+                <b>Борисенко Александр</b>
               </span>
               <span style={{ fontSize: "24px" }}>Руководитель проекта</span>
             </div>
